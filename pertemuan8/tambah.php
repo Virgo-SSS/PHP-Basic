@@ -5,10 +5,16 @@ require 'functions.php';
 // cek apakah tombol submit sudah di tekan apa belum
 if( isset($_POST["submit"]) ) {
    if (tambah($_POST) > 0) {
-       echo "data berhasil di tambahkan";
+       echo "<script>
+                alert('data berhasil ditambahkan');
+                document.location.href ='index.php';
+            </script>"; // redirect ke halaman index.php menggunakan javascript
+    //    header("Location: index.php"); // redirect ke halaman index.php
    } else {
        echo "data gagal di tambahkan";
    }
+
+   
 
 }
    
@@ -29,20 +35,24 @@ if( isset($_POST["submit"]) ) {
 
 <h1>Tambah data </h1>
 <!-- make simple form for inster data -->
-<form action="" method="post">
+<form action="" method="post" enctype="multipart/form-data">
     <ul>
         <li>
-            <label for="nim">NIM</label>
+            <label for="nim">NIM : </label>
             <input type="text" name="nim" id="nim">
         </li>
         <li>
-            <label for="name">name</label>
+            <label for="name">name : </label>
             <input type="text" name="name" id="name">
         </li>
 
         <li>
-            <label for="jurusan">jurusan</label>
+            <label for="jurusan">jurusan : </label>
             <input type="text" name="jurusan" id="jurusan">
+        </li>
+        <li>
+            <label for="jurusan">Image : </label>
+            <input type="file" name="image" id="image">
         </li>
     </ul>
 

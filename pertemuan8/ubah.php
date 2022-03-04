@@ -9,7 +9,10 @@ $mhs = query("SELECT * FROM mahasiswa WHERE id = $id")[0];
 // cek apakah tombol submit sudah di tekan apa belum
 if( isset($_POST["submit"]) ) {
    if (ubah($_POST) > 0) {
-       echo "data berhasil di ubah";
+       echo"<script>
+                alert('data berhasil diUbah');
+                document.location.href ='index.php';
+            </script>"; // redirect ke halaman index.php menggunakan javascript
    } else {
        echo "data gagal di ubah";
    }
@@ -33,8 +36,10 @@ if( isset($_POST["submit"]) ) {
 
 <h1>Tambah data </h1>
 <!-- make simple form for inster data -->
-<form action="" method="post">
+<form action="" method="post" enctype="multipart/form-data">
     <input type="hidden" name="id" value="<?= $mhs['id']; ?>">
+    <input type="hidden" name="oldimage" value="<?= $mhs['image']; ?>">
+
     <ul>
         <li>
             <label for="nim">NIM</label>
@@ -48,6 +53,11 @@ if( isset($_POST["submit"]) ) {
         <li>
             <label for="jurusan">jurusan</label>
             <input type="text" name="jurusan" id="jurusan" value="<?= $mhs['jurusan']; ?>">
+        </li>
+        <li>
+            <img src="img/<?= $mhs['image'] ?>" alt="" width="100px"> <br>
+            <label for="image">Image</label>
+            <input type="file" name="image" id="image">
         </li>
     </ul>
 

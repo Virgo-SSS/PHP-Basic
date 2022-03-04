@@ -23,4 +23,4 @@ echo "<br>";
 var_dump($data);
 ?>
 
-<!-- TETAPI INI VAR_DUMP DAN PRINT_R HANYA UNTUK DEBUG untuk client side cek di latarray2 -->
+<!-- TETAPI INI VAR_DUMP DAN PRINT_R HANYA UNTUK DEBUG untuk developer cek di latarray2 -->

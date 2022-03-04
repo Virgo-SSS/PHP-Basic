@@ -38,6 +38,7 @@ if( isset($_POST["cari"]) ) {
         <th>NIM</th>
         <th>Nama</th>
         <th>Jurusan</th>
+        <th>Logo</th>
     </tr>
 
     <!-- menampikan data mahasiswa -->
@@ -53,6 +54,7 @@ if( isset($_POST["cari"]) ) {
         <td><?= $mhs["nim"]; ?></td>
         <td><?= $mhs["name"]; ?></td>
         <td><?= $mhs["jurusan"]; ?></td>
+        <td><img src="img/<?= $mhs['image']; ?>" alt="" width="100px"></td>
     </tr>
     <?php $i++ ?>
     <?php endforeach; ?>

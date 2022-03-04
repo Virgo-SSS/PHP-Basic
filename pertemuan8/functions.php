@@ -24,13 +24,52 @@ function tambah($request) {
     $nim =$request["nim"];
     $nama =$request["name"];
     $jurusan =$request["jurusan"];
+
+    //  upload gambar
+    $image = upload();
+    if(!$image){
+        return false;
+    }
        
     // query insert data
-    $query = "INSERT INTO mahasiswa(nim, name, jurusan) VALUES ('$nim', '$nama', '$jurusan')";
+    $query = "INSERT INTO mahasiswa(nim, name, jurusan, image) VALUES ('$nim', '$nama', '$jurusan', '$image')";
     mysqli_query($conn, $query);
        
     return mysqli_affected_rows($conn);
 
+}
+
+
+function upload()
+{
+    $namaFile = $_FILES['image']['name'];
+    $error = $_FILES['image']['error'];
+    $tmpName = $_FILES['image']['tmp_name'];
+
+    // image required
+    if($error === 4) {
+        echo "Tidak ada gambar yang di upload";
+        return false;
+    }
+
+    // image should be image
+    $ekstensiGambarValid = ['jpg', 'jpeg', 'png'];
+    $ekstensiGambar = explode('.', $namaFile);
+    $ekstensiGambar = strtolower(end($ekstensiGambar));
+    if(!in_array($ekstensiGambar, $ekstensiGambarValid)){
+        echo  " <script>alert('Yang anda upload bukan gambar')</script>";
+        return false;
+    }
+
+    // generate nama baru buat image atau di laravel hash
+    $namaFileBaru = uniqid();
+    $namaFileBaru .= '.';
+    $namaFileBaru .= $ekstensiGambar;
+
+    // jika sudah lolos pengecekan 
+    move_uploaded_file($tmpName, 'img/' . $namaFileBaru);
+
+    return $namaFileBaru;
 }
 
 // delete data
@@ -49,9 +88,17 @@ function ubah($request) {
     $nim =$request["nim"];
     $nama =$request["name"];
     $jurusan =$request["jurusan"];
-       
+    $imageold = $request["oldimage"];
+
+    if($_FILES['image']['error'] === 4) {
+        $image = $imageold;
+
+    } else {
+        $image = upload();
+    }
+
     // query insert data
-    $query = "UPDATE mahasiswa SET nim = '$nim', name = '$nama', jurusan = '$jurusan' WHERE id = $id";
+    $query = "UPDATE mahasiswa SET nim = '$nim', name = '$nama', jurusan = '$jurusan', image = '$image' WHERE id = $id";
     mysqli_query($conn, $query);
        
     return mysqli_affected_rows($conn);
