@@ -59,7 +59,7 @@ if( isset($_POST["cari"]) ) {
     <?php $i++ ?>
     <?php endforeach; ?>
     
-    <a href="tambah.php">Tambah data</a>
+    <a href="tambah.php">Tambah data s</a>
     <br>
     
 </table>
