@@ -22,3 +22,17 @@ untuk melakukan inheritance, kita harus menggunakan kata kunci yg namanya "exten
 namesapce, tempat untuk menyimpan class2, atau mirip seperti folder
 untuk mengakses class di sebuah namespace, kita harus menyebutkan namespace nya terlebih dahulu
 nah untuk mengimport name space bisa mengguakan use
+
+
+
+visibily
+PRIVATE hanya bisa di access di class itu sendiri
+PUBLIC bisa di akses semuanya
+PROTECTED bisa di akses di class parent dan class child, tidak bisa world
+
+
+
+KEYWORD PARENT
+di gunakan ketika sudah terlanjur nge overide function class parent di 
+class child, terus kita mau menggunakan function yang ada di class parent lagi secara bersamaan di
+di class child

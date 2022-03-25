@@ -11,6 +11,11 @@
 // karena manage parent dan vicemanager itu child
 class vicemanager extends manager
 {
+    public function sayHallo($name):void
+    {   
+        // $this->name mengarah kepada var $name, dan $name mengarah kepada param $name
+        echo "Hallo $this->name, Selamat malam $name hai hai";
+    }
 
 }
 
