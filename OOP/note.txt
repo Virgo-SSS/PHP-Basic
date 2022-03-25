@@ -1,0 +1,19 @@
+Object ada data yang berisi filed/list/attributes beserta function2 nya
+
+Class seperti blueprint atau cetakan untuk membentuk sebuah object, seperti agar2 cetakan nya ada class
+dan agar2ny ada object
+
+Properties atau field atau atribute  adalah data yg dapat kita masukan ke dalam sebuah object
+namun sebelum memasukan data ke field/propertis/attribute
+membuat field sama seperti membuat variable, cuman beda nya kalau field harus menggunakan "var"
+dan di tempatkan di class
+
+constant (const) adalah data yg tak bisa di ubah2
+
+keyword "self" adalah keyword untuk mempermudah memanggil class di tempat class tersebut untuk di pakai 
+di dalam function, (coba lihat di class person)
+
+
+inheritance atau perwarisan adalah kemampuan untuk menurunka sebuah class ke class lain
+contoh nya seeprti parent dan child, class parent dan class child
+tetapi class child hanya bisa memiliki 1 class parent, dan class parent boleh miliki banyak class child
