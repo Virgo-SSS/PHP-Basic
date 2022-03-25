@@ -17,3 +17,8 @@ di dalam function, (coba lihat di class person)
 inheritance atau perwarisan adalah kemampuan untuk menurunka sebuah class ke class lain
 contoh nya seeprti parent dan child, class parent dan class child
 tetapi class child hanya bisa memiliki 1 class parent, dan class parent boleh miliki banyak class child
+untuk melakukan inheritance, kita harus menggunakan kata kunci yg namanya "extends" kemudian di ikut nama class parent nya
+
+namesapce, tempat untuk menyimpan class2, atau mirip seperti folder
+untuk mengakses class di sebuah namespace, kita harus menyebutkan namespace nya terlebih dahulu
+nah untuk mengimport name space bisa mengguakan use

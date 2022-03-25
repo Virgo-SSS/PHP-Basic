@@ -1,5 +1,8 @@
 <?php 
 
+// namespace OOP\data;
+
+
 class manager 
 {
     var $name;

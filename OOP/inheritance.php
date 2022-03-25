@@ -1,8 +1,9 @@
 <?php 
 
-require_once "OOP/class/person.php";
-require_once "OOP/class/manager.php";
-require_once "OOP/class/vicemanager.php";
+require_once "OOP/data/person.php";
+require_once "OOP/data/manager.php";
+require_once "OOP/data/vicemanager.php";
+
 
 $new = new manager();
 $new->name = "Budi ";
