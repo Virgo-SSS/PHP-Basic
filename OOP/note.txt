@@ -36,3 +36,48 @@ KEYWORD PARENT
 di gunakan ketika sudah terlanjur nge overide function class parent di 
 class child, terus kita mau menggunakan function yang ada di class parent lagi secara bersamaan di
 di class child
+
+polymorphism merupakan kemampuan untuk merubah bentuk object, polymorphism erat dengan inheritance
+kalau di laravel itu kayak public function (Request $request)
+nah itu termasuk polymorphism
+
+instanceof bisa di gunakan untuk melakukan pengecekan tipe data, 
+instanceof menghasilkan nilai boolean, jika true sesuai, jika false tidak sesuai
+
+
+abstract class artinya class tersebut tidak bisa di jadikan object, hanya bisa di turunkan
+kemudian turunan nya yg di jadikan sebuah object itupun kalau turunan nya bukan termauk abstract juga
+
+untuk abstract function harus di kasih visibily protected atau public jgn private, kemudian untuk 
+abstract function, child class wajib mengoverried function abstract jika mau menggunakannya
+dan abstract function hanya bisa di bikin di abstract class
+
+
+trait di gunakna untuk menyimpan beberapa function yang dapat digunakan ualng di beberapa class
+atau bisa di bilang global function, untuk menggunakna trait di class bisa menggunakan use
+jadi contoh nya kita bikin 1 trait yg dimana isi nyada function sayHallo, 
+nah kita bisa menggunakan function tersebut di class manapun, contoh nya di traitssaygoodbye.php
+
+
+Final class, class yang tidak bisa di turunkan lagi
+Final function tidak bisa di override lagi
+
+
+
+keyword "static" maka bisa di akses secara langsung tanpa haruss use class atau apapun itu
+tetapi cara manggil nya langsung menggunakan nama classnya, contoh nya person::(nama function atau property)
+
+kemuidan untuk static function sama tinggal pakai nama class nya kemudian langsugn nama function nya
+contoh nya person::sum(10,10); lihat contoh di file statis.php
+
+
+
+MAGIC FUNCTION
+__invoke merupakan function yang bisa di eksekusi ketika object kita jadikan function
+misal ketika ada object 
+$student = new student();
+$student->name = "virgo;
+maka jika ada __invoke di dalam class student bisa langsung kita bikin seperti
+$student = new student();
+$student();
+otomatis function __invoke aja di jalan kan
