@@ -1,0 +1,19 @@
+{
+    "name": "virgo/belajar-php-composer",
+    "description": "belajar php composer",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Bluecode",
+            "email": "virgostevanus27@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Virgo\\": "src/"
+        }
+    },
+    "require": {
+        "monolog/monolog" : "2.5.0"
+    }
+}
